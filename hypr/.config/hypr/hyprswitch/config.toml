@@ -1,0 +1,2 @@
+switcher_type = "simple"  # or "grid"
+include_all_workspaces = true
