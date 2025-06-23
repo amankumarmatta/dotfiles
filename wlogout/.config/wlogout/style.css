@@ -1,0 +1,40 @@
+window {
+  font-size: 24pt;
+  font-family: "GohuFont 14 Nerd Font", monospace;
+  color: #d8dee9;
+  background-color: rgba(30, 30, 46, 0.85);
+}
+button {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+  background-color: transparent;
+  border-radius: 80px;
+  border: 0px;
+  outline-style: none;
+}
+button:hover {
+  background-color: transparent;
+  color: #ebcb8b;
+}
+button span {
+  font-size: 1.2em;
+}
+#lock {
+  background-image: image(url("./icons/lock.png"));
+}
+#logout {
+  background-image: image(url("./icons/logout.png"));
+}
+#suspend {
+  background-image: image(url("./icons/sleep.png"));
+}
+#shutdown {
+  background-image: image(url("./icons/power.png"));
+}
+#reboot {
+  background-image: image(url("./icons/restart.png"));
+}
+#hibernate {
+  background-image: image(url("./icons/hibernate.png"));
+}
