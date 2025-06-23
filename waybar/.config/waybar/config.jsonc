@@ -1,0 +1,52 @@
+{
+  "layer": "tp",
+  "modules-left": [],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["tray", "pulseaudio", "clock", "custom/powermenu"],
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip": false
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "  muted",
+    "format-icons": {
+      "headphone": "",
+      "default": [" ", " ", " "]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "sort-by-number": true
+  },
+
+  "tray": {
+    "show-passive-items": true,
+    "spacing": 10
+  },
+
+  "custom/bluetooth": {
+    "format": "", // Bluetooth icon (Nerd Font)
+    "tooltip": "Bluetooth",
+    "on-click": "blueman-manager"
+  },
+
+  "custom/powermenu": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "wlogout",
+    "on-click-right": "hyprlock",
+    "interval": 3600
+  }
+}
