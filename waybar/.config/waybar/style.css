@@ -8,11 +8,13 @@
 }
 
 /* Workspaces */
-#workspaces {
+#workspaces, #network, #clock, #custom-media, #custom-powermenu, #pulseaudio {
   background-color: rgba(42, 46, 63, 0.85); /* color0 with opacity */
+  padding: 0 10px;
   margin-top: 2px;
-  margin-left: 10px;
-  border-radius: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  border-radius: 10px;
 }
 
 #workspaces button {
@@ -37,16 +39,6 @@
   color: #1e1e2e; /* selection_foreground */
 }
 
-/* Clock */
-#clock {
-  background: #4c8eda;
-  color: #1e1e2e;
-  padding: 2px 6px;
-  border-radius: 4px;
-  animation: pulse 5s infinite;
-  font-size: 11px;
-}
-
 @keyframes pulse {
   0% {
     background-color: #4c8eda;
@@ -57,39 +49,6 @@
   100% {
     background-color: #4c8eda;
   }
-}
-
-#pulseaudio {
-  background: #2a2e3f; /* color0 */
-  color: #eceff4; /* color15 */
-  padding: 2px 6px;
-  border-radius: 4px;
-  margin: 0 4px;
-  font-size: 11px;
-}
-
-#custom-bluetooth {
-  background: #2a2e3f; /* color0 */
-  color: #88c0d0; /* color6 */
-  padding: 4px;
-  border-radius: 4px;
-  margin: 0 4px;
-  font-size: 13px;
-  font-family: "JetBrainsMono Nerd Font";
-}
-
-/* Powermenu Button */
-#custom-powermenu {
-  background: #d67d9f;
-  color: #eceff4;
-  padding: 5px 6px 5px 3px;
-  border-radius: 4px;
-  margin: 0 4px;
-  font-size: 14px;
-  font-family: "IBM Plex Mono", monospace;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-  transition: background 0.3s ease;
-  min-width: 22px;
 }
 
 #custom-powermenu:hover {

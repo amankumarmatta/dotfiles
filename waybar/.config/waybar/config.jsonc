@@ -1,8 +1,9 @@
 {
-  "layer": "tp",
-  "modules-left": [],
+  "layer": "top",
+  "reload_style_on_change": true,
+  "modules-left": ["network#speed"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["tray", "pulseaudio", "clock", "custom/powermenu"],
+  "modules-right": ["custom/media", "pulseaudio", "clock", "custom/powermenu"],
   "clock": {
     "format": "{:%H:%M}",
     "tooltip": false
@@ -21,26 +22,28 @@
   },
 
   "hyprland/workspaces": {
-    "format": "{icon}",
-    "on-click": "activate",
-    "format-icons": {
-      "urgent": "",
-      "active": "",
-      "default": ""
-    },
-    "sort-by-number": true
-  },
-
-  "tray": {
-    "show-passive-items": true,
-    "spacing": 10
-  },
-
-  "custom/bluetooth": {
-    "format": "", // Bluetooth icon (Nerd Font)
-    "tooltip": "Bluetooth",
-    "on-click": "blueman-manager"
-  },
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "urgent": "",
+        "default": ""
+      },
+      "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+      },
+      "sort-by-number": true
+    }, 
 
   "custom/powermenu": {
     "format": "",
@@ -48,5 +51,35 @@
     "on-click": "wlogout",
     "on-click-right": "hyprlock",
     "interval": 3600
-  }
+  },
+
+  "network#speed": {
+      "interval": 1,
+      "format": "{ifname}",
+      "format-wifi": "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+      "format-ethernet": "󰌘  {bandwidthUpBytes}  {bandwidthDownBytes}",
+      "format-disconnected": "󰌙",
+      "tooltip-format": "{ipaddr}",
+      "format-linked": "󰈁 {ifname} (No IP)",
+      "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+      "tooltip-format-ethernet": "{ifname} 󰌘",
+      "tooltip-format-disconnected": "󰌙 Disconnected",
+      "min-length": 24,
+      "max-length": 24,
+      "format-icons": [
+        "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+      ]
+    },  
+  
+  "custom/media": {
+        "format": "{icon}{text}",
+        "return-type": "json",
+        "format-icons": {
+            "Playing": " ",
+            "Paused": " ",
+        },
+        "max-length":30,
+        "exec": "playerctl -a metadata --format '{\"text\": \"{{playerName}}: {{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+        "on-click": "playerctl play-pause",
+    }
 }
