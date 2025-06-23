@@ -1,0 +1,244 @@
+configuration {
+    modi: "drun,run,filebrowser";
+    show-icons: true;
+    display-drun: "  apps";
+    display-run: "  term";
+    display-filebrowser: "  files";
+    display-window: "  window";
+    drun-display-format: "{icon} {name}";
+    window-format: "{w} · {c} · {t}";
+    hover-select: true;
+    me-select-entry: "MouseSecondary";
+    me-accept-entry: "MousePrimary";
+}
+
+* {
+    font: "GohuFont 14 Nerd Font";
+    active-background: #5e81ac;
+    active-foreground: #eceff4;
+    normal-background: #2e3440;
+    normal-foreground: #eceff4;
+    urgent-background: #bf616a;
+    urgent-foreground: #eceff4;
+
+    alternate-active-background: #4c566a;
+    alternate-active-foreground: #eceff4;
+    alternate-normal-background: #2e3440;
+    alternate-normal-foreground: #eceff4;
+    alternate-urgent-background: #2e3440;
+    alternate-urgent-foreground: #eceff4;
+
+    selected-active-background: #81a1c1;
+    selected-active-foreground: #2e3440;
+    selected-normal-background: #81a1c1;
+    selected-normal-foreground: #2e3440;
+    selected-urgent-background: #5e81ac;
+    selected-urgent-foreground: #eceff4;
+
+    background-color: #2e3440;
+    background: rgba(46,52,64,0.7);
+    foreground: #eceff4;
+    border-color: #5e81ac;
+
+    color0: #2e3440;
+    color1: #3b4252;
+    color2: #434c5e;
+    color3: #4c566a;
+    color4: #d8dee9;
+    color5: #e5e9f0;
+    color6: #eceff4;
+    color7: #8fbcbb;
+    color8: #88c0d0;
+    color9: #81a1c1;
+    color10: #5e81ac;
+    color11: #bf616a;
+    color12: #d08770;
+    color13: #ebcb8b;
+    color14: #a3be8c;
+    color15: #b48ead;
+
+    background-alt: @color1;
+    selected: @color9;
+    active: @color11;
+    urgent: @color11;
+    text-selected: @background;
+    text-color: @foreground;
+    border-color: @selected;
+}
+
+window {
+    enabled: true;
+    fullscreen: false;
+    transparency: "real";
+    cursor: "default";
+    spacing: 0px;
+    border: 3px 0px 3px 0px;
+    border-radius: 30px;
+    location: center;
+    anchor: center;
+    width: 50%;
+    background-color: @background;
+}
+
+mainbox {
+    padding: 12px;
+    enabled: true;
+    orientation: vertical;
+    children: ["inputbar", "listbox"];
+    background-color: transparent;
+}
+
+inputbar {
+    enabled: true;
+    padding: 20px 10px 20px 10px;
+    margin: 20px;
+    background-color: transparent;
+    border-radius: 20px;
+    orientation: horizontal;
+    children: ["entry", "dummy", "mode-switcher"];
+    background-image: url("~/.config/rofi/.current_wallpaper", width);
+}
+
+entry {
+    enabled: true;
+    expand: false;
+    width: 20%;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: @active;
+    text-color: @text-selected;
+    cursor: text;
+    placeholder: " 🖥️ Search ";
+    placeholder-color: inherit;
+}
+
+listbox {
+    spacing: 10px;
+    padding: 10px;
+    background-color: transparent;
+    orientation: vertical;
+    children: ["message", "listview"];
+}
+
+listview {
+    enabled: true;
+    columns: 5;
+    lines: 5;
+    cycle: true;
+    dynamic: true;
+    scrollbar: true;
+    layout: vertical;
+    reverse: false;
+    fixed-height: true;
+    fixed-columns: true;
+    spacing: 10px;
+    background-color: transparent;
+    margin: 10px;
+    text-color: @foreground;
+    border: 0px;
+}
+
+dummy {
+    expand: true;
+    background-color: transparent;
+}
+
+mode-switcher {
+    enabled: true;
+    spacing: 10px;
+    background-color: transparent;
+}
+
+button {
+    width: 5%;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: @text-selected;
+    text-color: @text-color;
+    cursor: pointer;
+}
+
+button selected {
+    background-color: @selected;
+    text-color: @text-selected;
+}
+
+scrollbar {
+    border: 0px;
+    border-radius: 10px;
+    border-color: @color12;
+    handle-color: @color11;
+    handle-width: 2px;
+    padding: 0;
+}
+
+element {
+    enabled: true;
+    orientation: vertical;
+    padding: 10px;
+    spacing: 10px;
+    border-radius: 12px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+element normal.active {
+    background-color: @active;
+    text-color: @foreground;
+}
+
+element selected.normal {
+    border: 0px 3px 0px 3px;
+    border-radius: 16px;
+    background-color: @selected;
+    text-color: @selected-normal-foreground;
+}
+
+element-text selected,
+element normal.normal {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element alternate {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+element-icon {
+    size: 3%;
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+}
+
+element-text {
+    size: 1%;
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+message {
+    background-color: transparent;
+    border: 0px;
+}
+
+textbox {
+    margin: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: @active;
+    text-color: @foreground;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+error-message {
+    padding: 12px;
+    border-radius: 20px;
+    background-color: @background;
+    text-color: @foreground;
+}
