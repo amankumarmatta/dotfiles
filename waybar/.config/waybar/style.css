@@ -1,57 +1,109 @@
+@import "colors.css";
+
 * {
-  font-family: "JetBrainsMono Nerd Font", "IBM Plex Mono", monospace;
-  font-size: 11px;
-  color: #d8dee9;
-  background: transparent;
-  margin: 0;
-  padding: 0;
+  font-family: "JetBrainsMono Nerd Font Mono", "Noto Sans CJK SC", "Symbols Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands", monospace;
+  font-size: 14px;
 }
 
-/* Workspaces */
-#workspaces, #network, #clock, #custom-media, #custom-powermenu, #pulseaudio {
-  background-color: rgba(42, 46, 63, 0.85); /* color0 with opacity */
-  padding: 0 10px;
-  margin-top: 2px;
-  margin-left: 8px;
-  margin-right: 8px;
-  border-radius: 10px;
+window#waybar {
+  background-color: rgba(14, 13, 14, 0.5);
+  color: #efe6e0;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-top: 10px transparent;
+  border-radius: 4px;
+  transition-duration: 0.5s;
+  margin: 16px 16px;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
 }
 
 #workspaces button {
-  background: transparent;
-  color: #d8dee9;
-  padding: 2px 4px;
+  padding: 0 5px;
+  color: #B3A8A2;
+  background-color: transparent;
+  box-shadow: inset 0 -3px transparent;
+  border: none;
   border-radius: 4px;
-  transition: all 0.3s ease-in-out;
-  font-size: 11px;
 }
 
-#workspaces button:first-child {
-  margin-left: 10px;
+#workspaces button.focused {
+  color: #D9A88B;
 }
 
-#workspaces button:last-child {
-  margin-right: 10px;
+#workspaces button.active {
+  color: #AD8773;
 }
 
-#workspaces button:hover {
-  background: #4c8eda; /* selection_background */
-  color: #1e1e2e; /* selection_foreground */
+#workspaces button.urgent {
+  background-color: #424A55;
 }
 
-@keyframes pulse {
-  0% {
-    background-color: #4c8eda;
-  }
-  50% {
-    background-color: #88c0d0;
-  }
-  100% {
-    background-color: #4c8eda;
-  }
+#window {
+  color: #706864;
 }
 
-#custom-powermenu:hover {
-  background: #e6a97f; /* color3 */
-  color: #1e1e2e;
+#clock,
+#network,
+#mode,
+#bluetooth,
+#window,
+#workspaces {
+  margin: 0 4px;
+  border-radius: 7.8px;
+  background-color: transparent;
+}
+
+#custom-power-menu {
+  color: #D9A88B;
+  border-radius: 7.5px;
+  background-color: transparent;
+  padding: 0 0px;
+}
+
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#pulseaudio {
+  color: #FBD9C7;
+}
+
+#clock {
+  color: #efe6e0;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+#bluetooth {
+  color: #B3A8A2;
+}
+
+#bluetooth.disconnected {
+  color: #424A55;
+}
+
+#network {
+  color: #D9A88B;
+}
+
+#network.disconnected {
+  color: #424A55;
+}
+
+#custom-swaync {
+  margin: 5px;
+  padding: 0 5px;
+  color: #706864;
+  background: transparent;
+  background-color: transparent;
+  border-radius: 7rem;
 }
