@@ -1,97 +1,34 @@
-  {
-    "height": 30,
-    "layer": "top",
-    "margin-top": 6,
-    "margin-left": 10,
-    "margin-bottom": 0,
-    "margin-right": 10,
-    "spacing": 5,
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "bluetooth", "network","custom/swaync", "custom/power-menu"],
+{
+  "height": 30,
+  "layer": "top",
+  "margin-top": 6,
+  "margin-left": 10,
+  "margin-bottom": 0,
+  "margin-right": 10,
+  "spacing": 5,
+  "padding": 10,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [],
 
-    "hyprland/workspaces": {
-      "persistent-workspaces": {
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
       "*": [1, 2, 3, 4, 5]
-      },
-      "format": "{icon}",
-      "show-empty": true,
-      "on-click": "activate",
-      "format-icons": {
-        "1": "一",
-        "2": "二",
-        "3": "三",
-        "4": "四",
-        "5": "五",
-        "6": "六",
-        "7": "七",
-        "8": "八",
-        "9": "九",
-      }
     },
-
-    "hyprland/window": {
-    "format": "{}"
-    },
-
-    "clock": {
-        "format": "<span color='#9b958b'> </span>{:%H:%M}",
-    },
-
-    "network": {
-        "format-wifi": "直 {signalStrength}%",
-        "format-ethernet": " wired",
-        "format-disconnected": "睊",
-        "on-click": "kitty nmtui",
-    },
-
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "  {volume}%",
-        "format-bluetooth-muted": " ",
-        "format-muted": "婢",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-
-    "custom/powermenu": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "wlogout",
-        "on-click-right": "hyprlock",
-        "interval": 3600
-    },
-
-    "custom/launcher": {
-        "format": "  ",
-        "on-click": "bash ~/.config/rofi/launchers/type-3/launcher.sh",
-    },
-
-    "custom/swaync": {
-	"format": "{} {icon}",
-	"format-icons": {
-		"notification": "<span foreground='red'><sup></sup></span>",
-		"none": "",
-		"dnd-notification": "<span foreground='red'><sup></sup></span>",
-		"dnd-none": "",
-		"inhibited-notification": "<span foreground='red'><sup></sup></span>",
-		"inhibited-none": "",
-		"dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-		"dnd-inhibited-none": ""
-	},
-    "return-type": "json",
-	"exec-if": "which swaync-client",
-	"exec": "swaync-client -swb",
-	"on-click": "sleep 0.1 && swaync-client -t -sw",
-	"on-click-right": "swaync-client -d -sw",
-	"escape": true,
-    },
- }
+    "format": "{icon}",
+    "show-empty": true,
+    "on-click": "activate",
+    "sort-by-number": true,
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9"
+    }
+  }
+}
