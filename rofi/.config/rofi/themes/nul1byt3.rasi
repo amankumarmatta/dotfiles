@@ -1,0 +1,66 @@
+@import "colors.rasi"
+
+* {
+  font: "IBM Plex Mono";
+  text-color: @foreground;
+  background-color: @background;
+  selected-text-color: @background;
+  selected-background-color: @color4;
+  border-radius: 10px;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+  location: center;
+  anchor: center;
+  width: 520px;
+  border: 0;
+  padding: 10px;
+  background-color: rgba(49,46,48,0.6);  // semi-transparent
+}
+
+mainbox {
+  children: [inputbar, listview];
+  spacing: 15px;
+  padding: 10px 0;
+}
+
+inputbar {
+  background-color: @background-alt;
+  padding: 6px;
+  border-radius: 2px;
+  spacing: 6px;
+  text-color: @foreground;
+}
+
+prompt {
+  enabled: false;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: "";
+}
+
+listview {
+  lines: 7;
+  fixed-height: false;
+  padding: 2px;
+  background-color: transparent;
+  border: 0;
+  scrollbar: false;
+}
+
+element {
+  padding: 12px 14px;
+  border-radius: 8px;
+  background-color: transparent;
+  text-color: @foreground;
+}
+
+element selected {
+  background-color: @color4;
+  text-color: @background;
+  border-radius: 8px;
+}

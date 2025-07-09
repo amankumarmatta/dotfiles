@@ -1,15 +1,18 @@
 {
-  "height": 36,
-  "margin-top": 6,
-  "margin-left": 10,
-  "margin-bottom": 0,
-  "margin-right": 10,
-  "spacing": 5,
-  "padding": 10,
+  "layer": "top",
   "position": "top",
+  "height": 34,
+  "margin": 4,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["network", "pulseaudio"],
+  "modules-right": [
+    "network",
+    "bluetooth",
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "custom/power"
+  ],
 
   "hyprland/workspaces": {
     "persistent-workspaces": {
@@ -33,20 +36,46 @@
   },
 
   "clock": {
-    "format": "<span foreground='#f5c2e7'> </span>{:%a %d %H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "format": "{:%a %d %b  %H:%M}",
+    "tooltip": true,
+    "tooltip-format": "{:%A, %B %d, %Y %H:%M:%S}"
   },
 
   "network": {
-    "format-ethernet": " ",
-    "format-disconnected": "<span size='13000' foreground='#f5e0dc'> </span>Disconnected"
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀  {ipaddr}",
+    "format-disconnected": "󰖪  Disconnected",
+    "tooltip-format": "{ifname} via {gwaddr}"
   },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "format-disabled": "",
+    "on-click": "blueman-manager"
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": false
+  },
+
+  "memory": {
+    "format": " {used:0.1f}G",
+    "tooltip": false
+  },
+
   "pulseaudio": {
-    "format": "{icon}{volume}%",
-    "format-muted": "",
-    "format-icons": {
-      "default": ["", "", " "]
-    },
+    "format": " {volume}%",
+    "format-muted": " Mute",
     "on-click": "pavucontrol"
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": "Power Menu",
+    "on-click": "wlogout",
+    "on-click-right": "systemctl reboot",
+    "signal": 1
   }
 }
