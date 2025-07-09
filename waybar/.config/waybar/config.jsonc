@@ -1,5 +1,5 @@
 {
-  "height": 30,
+  "height": 36,
   "margin-top": 6,
   "margin-left": 10,
   "margin-bottom": 0,
@@ -9,7 +9,7 @@
   "position": "top",
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["network","pulseaudio"],
+  "modules-right": ["network", "pulseaudio"],
 
   "hyprland/workspaces": {
     "persistent-workspaces": {
@@ -38,15 +38,15 @@
   },
 
   "network": {
-    "format-ethernet": "<span size='13000' foreground='#f5e0dc'> </span>{essid}",
-    "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
+    "format-ethernet": " ",
+    "format-disconnected": "<span size='13000' foreground='#f5e0dc'> </span>Disconnected"
   },
   "pulseaudio": {
-      "format": "{icon}{volume}%",
-      "format-muted": "",
-      "format-icons": {
-          "default": ["", "", " "]
-      },
-      "on-click": "pavucontrol"
+    "format": "{icon}{volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "]
+    },
+    "on-click": "pavucontrol"
   }
 }
