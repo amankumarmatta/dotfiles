@@ -7,7 +7,7 @@ echo "Restoring dotfiles..."
 
 cd ~/dotfiles
 
-apps=(hypr rofi kitty waybar fastfetch zsh wlogout cava)
+apps=(hypr rofi kitty waybar fastfetch zsh wlogout cava Wallpapers wallust)
 
 for app in "${apps[@]}"; do
   echo "Stowing $app..."
