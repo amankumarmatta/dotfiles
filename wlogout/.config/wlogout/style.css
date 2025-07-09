@@ -1,40 +1,33 @@
+* {
+  font-family: "IBM Plex Mono", sans-serif;
+  font-size: 16px;
+}
+
 window {
-  font-size: 24pt;
-  font-family: "GohuFont 14 Nerd Font", monospace;
-  color: #d8dee9;
-  background-color: rgba(30, 30, 46, 0.85);
+  background-color: rgba(30, 30, 30, 0.3);
+  border-radius: 12px;
+  padding: 40px;
 }
+
 button {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20%;
-  background-color: transparent;
-  border-radius: 80px;
-  border: 0px;
-  outline-style: none;
+  background-color: rgba(49, 46, 48, 0.4);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px;
+  color: #F3E9E6;
+  border: none;
 }
+
 button:hover {
-  background-color: transparent;
-  color: #ebcb8b;
+  background-color: rgba(232, 112, 120, 0.2);
 }
-button span {
-  font-size: 1.2em;
+
+image {
+  -gtk-icon-transform: scale(2);
+  padding: 10px;
 }
-#lock {
-  background-image: image(url("./icons/lock.png"));
-}
-#logout {
-  background-image: image(url("./icons/logout.png"));
-}
-#suspend {
-  background-image: image(url("./icons/sleep.png"));
-}
-#shutdown {
-  background-image: image(url("./icons/power.png"));
-}
-#reboot {
-  background-image: image(url("./icons/restart.png"));
-}
-#hibernate {
-  background-image: image(url("./icons/hibernate.png"));
+
+label {
+  font-weight: bold;
+  margin-top: 10px;
 }

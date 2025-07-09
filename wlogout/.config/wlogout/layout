@@ -1,38 +1,27 @@
-
-{
-"label": "lock",
-"action": "hyprlock",
-"text": "Lock Screen",
-"keybind": "l"
-}
-{
-"label": "reboot",
-"action": "systemctl reboot",
-"text": "Reboot",
-"keybind": "r"
-}
-{
-"label": "shutdown",
-"action": "systemctl poweroff",
-"text": "Shutdown",
-"keybind": "s"
-}
-{
-"label": "logout",
-"action": "loginctl kill-session $XDG_SESSION_ID",
-"text": "Logout",
-"keybind": "e"
-}
-{
-"label": "suspend",
-"action": "systemctl suspend",
-"text": "Suspend",
-"keybind": "u"
-}
-{
-"label": "hibernate",
-"action": "systemctl hibernate",
-"text": "Hibernate",
-"keybind": "h"
-}
-
+[
+  {
+    "label": "Shutdown",
+    "action": "poweroff",
+    "icon": "system-shutdown"
+  },
+  {
+    "label": "Reboot",
+    "action": "reboot",
+    "icon": "system-reboot"
+  },
+  {
+    "label": "Sleep",
+    "action": "suspend",
+    "icon": "system-suspend"
+  },
+  {
+    "label": "Logout",
+    "action": "loginctl kill-session $XDG_SESSION_ID",
+    "icon": "system-log-out"
+  },
+  {
+    "label": "Lock",
+    "action": "hyprlock",
+    "icon": "system-lock-screen"
+  }
+]

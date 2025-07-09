@@ -1,47 +1,46 @@
 * {
-active-background: #E87078;
-active-foreground: #F3E9E6;
-normal-background: #312E30;
-normal-foreground: #F3E9E6;
-urgent-background: #9BA0B2;
-urgent-foreground: #F3E9E6;
+active-background: #184857;
+active-foreground: #B0C2C8;
+normal-background: #131518;
+normal-foreground: #B0C2C8;
+urgent-background: #1C5261;
+urgent-foreground: #B0C2C8;
 
-alternate-active-background: #807490;
-alternate-active-foreground: #F3E9E6;
-alternate-normal-background: #312E30;
-alternate-normal-foreground: #F3E9E6;
-alternate-urgent-background: #312E30;
-alternate-urgent-foreground: #F3E9E6;
+alternate-active-background: #153E4D;
+alternate-active-foreground: #B0C2C8;
+alternate-normal-background: #131518;
+alternate-normal-foreground: #B0C2C8;
+alternate-urgent-background: #131518;
+alternate-urgent-foreground: #B0C2C8;
 
-selected-active-background: #9BA0B2;
-selected-active-foreground: #F3E9E6;
-selected-normal-background: #9BA0B2;
-selected-normal-foreground: #F3E9E6;
-selected-urgent-background: #E87078;
-selected-urgent-foreground: #F3E9E6;
+selected-active-background: #1C5261;
+selected-active-foreground: #B0C2C8;
+selected-normal-background: #1C5261;
+selected-normal-foreground: #B0C2C8;
+selected-urgent-background: #184857;
+selected-urgent-foreground: #B0C2C8;
 
-background-color: #312E30;
-background: rgba(49,46,48,0.0);
-foreground: #F3E9E6;
-border-color: #E87078;
-background-alt:#1f1d1f;
+background-color: #131518;
+background: rgba(0,0,0,0.7);
+foreground: #B0C2C8;
+border-color: #184857;
 
-color0: #565255;
-color1: #39465E;
-color2: #7D2E3E;
-color3: #60576C;
-color4: #AE545A;
-color5: #747886;
-color6: #A68F8A;
-color7: #E5D6D3;
-color8: #A19694;
-color9: #4C5D7D;
-color10: #A73D53;
-color11: #807490;
-color12: #E87078;
-color13: #9BA0B2;
-color14: #DDBFB8;
-color15: #E5D6D3;
+color0: #3A3C3F;
+color1: #0A1F2A;
+color2: #0D2732;
+color3: #102E3A;
+color4: #123641;
+color5: #153D49;
+color6: #153D49;
+color7: #85A0A8;
+color8: #5D7075;
+color9: #0D2A38;
+color10: #113443;
+color11: #153E4D;
+color12: #184857;
+color13: #1C5261;
+color14: #1C5261;
+color15: #85A0A8;
 
 
 }
