@@ -1,5 +1,5 @@
 configuration {
-  font: "IBM Plex Mono 13";
+  font: "IBM Plex Mono";
   show-icons: false;
   icon-theme: "none";
   modi: "drun,run,window,ssh";
