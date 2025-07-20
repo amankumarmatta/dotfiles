@@ -8,8 +8,6 @@
   "modules-right": [
     "network",
     "bluetooth",
-    "cpu",
-    "memory",
     "pulseaudio",
     "custom/power"
   ],
@@ -43,26 +41,16 @@
 
   "network": {
     "format-wifi": "  {essid}",
-    "format-ethernet": "󰈀  {ipaddr}",
     "format-disconnected": "󰖪  Disconnected",
-    "tooltip-format": "{ifname} via {gwaddr}"
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "on-click": "nmtui"
   },
 
   "bluetooth": {
-    "format": " {status}",
+    "format": "",
     "format-connected": " {device_alias}",
     "format-disabled": "",
-    "on-click": "blueman-manager"
-  },
-
-  "cpu": {
-    "format": " {usage}%",
-    "tooltip": false
-  },
-
-  "memory": {
-    "format": " {used:0.1f}G",
-    "tooltip": false
+    "on-click": "blueberry"
   },
 
   "pulseaudio": {
