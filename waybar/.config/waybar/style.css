@@ -11,7 +11,7 @@
 
 /* Waybar container */
 window#waybar {
-  background-color: rgba(49, 46, 48, 0.35); /* semi-transparent */
+  background-color: @background;
   color: @foreground;
   border-radius: 8px;
   padding: 4px 10px;
