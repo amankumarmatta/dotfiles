@@ -11,11 +11,10 @@
 
 /* Waybar container */
 window#waybar {
-  background-color: @background;
+  background-color: rgba(0,0,0,0.3);
   color: @foreground;
   border-radius: 8px;
   padding: 4px 10px;
-  border: 2px solid @color6;
 }
 
 /* Shared module style */
