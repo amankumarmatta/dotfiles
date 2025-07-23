@@ -1,6 +1,6 @@
-backend = "resized"
-color_space = "lch"
-threshold = 10
+backend = "kmeans"
+color_space = "labmixed"
+threshold = 11
 palette = "dark16"
 
 [templates]
@@ -30,5 +30,3 @@ kitty.target = '~/.config/kitty/colors.conf'
 
 #zathura.template = 'colors-zathura'
 #zathura.target = '~/.config/zathura/zathurarc'
-vscode = { src = 'vscode.json', dst = '~/.cache/wallust/colors.json' }
-vscode2 = { src = 'vscode', dst = '~/.cache/wallust/colors' }

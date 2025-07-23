@@ -15,6 +15,7 @@ window#waybar {
   color: @foreground;
   border-radius: 8px;
   padding: 4px 10px;
+  border: 2px solid @color16;
 }
 
 /* Shared module style */
@@ -26,7 +27,7 @@ window#waybar {
 #memory,
 #pulseaudio,
 #custom-power {
-  color: @foreground;
+  color: @color16;
   padding-top: 5px;
   padding-bottom: 5px;
   margin: 0 6px;
@@ -37,7 +38,7 @@ window#waybar {
 /* Workspace buttons */
 #workspaces button {
   background: transparent;
-  color: @color6;
+  color: @color16;
   padding: 3px 8px;
   margin: 0 3px;
   border-radius: 6px;
@@ -58,7 +59,7 @@ window#waybar {
 
 /* Power icon */
 #custom-power {
-  color: @color10;
+  color: @color16;
   font-weight: bold;
 }
 
