@@ -6,6 +6,7 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": [
+    "network",
     "bluetooth",
     "pulseaudio",
     "custom/power"
@@ -15,9 +16,14 @@
     "persistent-workspaces": {
       "*": [1, 2, 3, 4, 5]
     },
-    "format": "{icon}",
-    "show-empty": true,
+    "format": "{name}",
+    "format": " {name} {icon} ",
+    //"format": " {icon} ",
+    "show-special": false,
     "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "all-outputs": true,
     "sort-by-number": true,
     "format-icons": {
       "1": "",
@@ -25,17 +31,42 @@
       "3": "",
       "4": "",
       "5": "",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9"
-    }
+      "6": " ",
+      "7": "",
+      "8": " ",
+      "9": "",
+      "10": "10",
+      "focused": "",
+      "default": "",
+    },
   },
 
   "clock": {
-    "format": "{:%a %d %b  %H:%M}",
-    "tooltip": true,
-    "tooltip-format": "{:%A, %B %d, %Y %H:%M:%S}"
+    "interval": 1,
+      "format": "{:%I:%M %p}", // AM PM format
+    "format-alt": " {:%H:%M   %Y, %d %B, %A}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{:%V}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+
+  "actions": {
+    "on-click-right": "mode",
+    "on-click-forward": "tz_up",
+    "on-click-backward": "tz_down",
+    "on-scroll-up": "shift_up",
+    "on-scroll-down": "shift_down"
   },
 
   "network": {
@@ -46,10 +77,14 @@
   },
 
   "bluetooth": {
-    "format": "",
-    "format-connected": " {device_alias}",
-    "format-disabled": "",
-    "on-click": "blueberry"
+	"format": "",
+	"format-disabled": "󰂳",
+	"format-connected": "󰂱 {num_connections}",
+	"tooltip-format": " {device_alias}",
+	"tooltip-format-connected": "{device_enumerate}",
+	"tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
+	"tooltip": true,
+	"on-click": "blueberry",
   },
 
   "pulseaudio": {
@@ -64,5 +99,23 @@
     "on-click": "wlogout",
     "on-click-right": "systemctl reboot",
     "signal": 1
+  },
+
+
+  "network": {
+    "format": "{ifname} ",
+    "format-wifi": "{icon} {essid}",
+    "format-ethernet": "󰌘",
+    "format-disconnected": "󰌙",
+    "tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} 󰌘",
+    "tooltip-format-disconnected": "󰌙 Disconnected",
+    "max-length": 30,
+    "format-icons": [
+      "󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+    ],
+    "on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --nmtui"
   }
 }
