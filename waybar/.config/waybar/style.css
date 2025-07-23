@@ -30,7 +30,7 @@
 	.modules-center,
 	.modules-right {
 		background-color: @color0;
-		border: 0.5px solid @color15;
+		border: 2px solid @color15;
 		border-radius: 10px;
 		padding-top: 2px;
 		padding-bottom: 2px;
