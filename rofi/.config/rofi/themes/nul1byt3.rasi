@@ -17,6 +17,7 @@ configuration {
     window-format:           "{w} · {c} · {t}";
 }
 
+
 /* ---- Global Properties ---- */
 * {
     background-alt:          @color1;
