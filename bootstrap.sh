@@ -53,6 +53,11 @@ core_packages=(
     "imagemagick"
     "yad"
     "notify-send"
+    "nautilus"
+    "cursor-bin"
+    "steam"
+    "neovim"
+    "openrgb"
 )
 
 # Install core packages
@@ -79,7 +84,7 @@ echo "📁 Restoring dotfiles..."
 
 cd ~/dotfiles
 
-apps=(hypr rofi kitty waybar fastfetch zsh wlogout Wallpapers wallust)
+apps=(hypr rofi kitty waybar nvim fastfetch zsh wlogout Wallpapers wallust)
 
 for app in "${apps[@]}"; do
   echo "📦 Stowing $app..."
