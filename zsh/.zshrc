@@ -4,7 +4,7 @@ fastfetch
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
+[ -z "$TMUX" ] && exec tmux
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -114,4 +114,5 @@ fi
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/aman/.dart-cli-completion/zsh-config.zsh ]] && . /home/aman/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
-
+source <(fzf --zsh)
+eval "$(zoxide init zsh)"
