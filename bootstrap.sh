@@ -58,6 +58,10 @@ core_packages=(
     "steam"
     "neovim"
     "openrgb"
+    "fzf"
+    "lazygit"
+    "sddm"
+    "sddm-silent-theme "
 )
 
 # Install core packages
@@ -84,7 +88,7 @@ echo "📁 Restoring dotfiles..."
 
 cd ~/dotfiles
 
-apps=(hypr rofi kitty waybar nvim fastfetch zsh wlogout Wallpapers wallust)
+apps=(hypr rofi kitty waybar nvim fastfetch zsh swaync qt5ct qt6ct wlogout Wallpapers wallust)
 
 for app in "${apps[@]}"; do
   echo "📦 Stowing $app..."
