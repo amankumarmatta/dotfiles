@@ -1,4 +1,4 @@
-backend = "fast-resize"
+backend = "kmeans"
 color_space = "labmixed"
 threshold = 11
 palette = "dark16"
