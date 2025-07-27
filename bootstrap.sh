@@ -20,7 +20,7 @@ command_exists() {
 install_packages() {
     local packages=("$@")
     echo "📦 Installing packages: ${packages[*]}"
-    
+
     # Check if yay is available, otherwise use pacman
     if command_exists yay; then
         yay -S --noconfirm "${packages[@]}"
@@ -38,7 +38,7 @@ core_packages=(
     "hyprland"
     "kitty"
     "swww"
-    "hyprpaper"
+    "hyprlock"
     "swaync"
     "waybar"
     "rofi-wayland"
@@ -62,6 +62,14 @@ core_packages=(
     "lazygit"
     "sddm"
     "sddm-silent-theme "
+    "zoxide"
+    "visual-studio-code-bin"
+    "ttf-jetbrains-mono-nerd"
+    "ttf-ibm-plex"
+    "ttf-roboto"
+    "noto-fonts"
+    "mangohud"
+    "ttf-gohu-nerd"
 )
 
 # Install core packages

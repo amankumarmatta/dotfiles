@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="arrow"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,7 +70,7 @@ ZSH_THEME="arrow"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo zsh-autocomplete zsh-syntax-highlighting web-search)
+plugins=(git sudo zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,3 +115,4 @@ fi
 ## [/Completion]
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
