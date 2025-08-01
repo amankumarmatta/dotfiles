@@ -72,6 +72,7 @@ core_packages=(
     "noto-fonts"
     "mangohud"
     "ttf-gohu-nerd"
+    "pokemon-colorscripts-git"
 )
 
 # Install core packages
@@ -98,7 +99,7 @@ echo "📁 Restoring dotfiles..."
 
 cd ~/dotfiles
 
-apps=(hypr rofi kitty waybar nvim fastfetch swaync qt5ct qt6ct wlogout Wallpapers wallust)
+apps=(hypr rofi kitty waybar nvim fastfetch swaync qt5ct qt6ct wlogout Wallpapers wallust starship fish)
 
 for app in "${apps[@]}"; do
   echo "📦 Stowing $app..."
