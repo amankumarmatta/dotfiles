@@ -1,7 +1,7 @@
-backend = "kmeans"
+backend = "resized"
 color_space = "labmixed"
 threshold = 11
-palette = "dark16"
+palette = "dark"
 
 [templates]
 cava.template = 'colors-cava'

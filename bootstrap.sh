@@ -36,6 +36,8 @@ echo "📦 Installing required packages..."
 # Core packages available in official repos
 core_packages=(
     "hyprland"
+    "nvidia"
+    "unityhub"
     "kitty"
     "swww"
     "hyprlock"
@@ -43,7 +45,7 @@ core_packages=(
     "waybar"
     "rofi-wayland"
     "fastfetch"
-    "zsh"
+    "fish"
     "wallust"
     "mpvpaper"
     "stow"
@@ -96,7 +98,7 @@ echo "📁 Restoring dotfiles..."
 
 cd ~/dotfiles
 
-apps=(hypr rofi kitty waybar nvim fastfetch zsh swaync qt5ct qt6ct wlogout Wallpapers wallust)
+apps=(hypr rofi kitty waybar nvim fastfetch swaync qt5ct qt6ct wlogout Wallpapers wallust)
 
 for app in "${apps[@]}"; do
   echo "📦 Stowing $app..."
