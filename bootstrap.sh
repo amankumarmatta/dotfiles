@@ -93,18 +93,3 @@ else
 fi
 
 echo "✅ Package installation completed!"
-
-# Stow dotfiles
-echo "📁 Restoring dotfiles..."
-
-cd ~/dotfiles
-
-apps=(hypr rofi kitty waybar nvim fastfetch swaync qt5ct qt6ct wlogout Wallpapers wallust starship fish)
-
-for app in "${apps[@]}"; do
-  echo "📦 Stowing $app..."
-  stow "$app"
-done
-
-echo "✅ All dotfiles stowed successfully."
-echo "🎉 Bootstrap completed! You may need to log out and back in for Hyprland to work properly."
