@@ -35,6 +35,17 @@ echo "📦 Installing required packages..."
 
 # Core packages available in official repos
 core_packages=(
+    "gnome-keyring"
+    "libsecret"
+    "seahorse"
+)
+
+# Install core packages
+install_packages "${core_packages[@]}"
+
+# Install additional packages that might be in AUR
+aur_packages=(
+    "mpvpaper"
     "hyprland"
     "nvidia"
     "unityhub"
@@ -75,14 +86,6 @@ core_packages=(
     "pokemon-colorscripts-git"
 )
 
-# Install core packages
-install_packages "${core_packages[@]}"
-
-# Install additional packages that might be in AUR
-aur_packages=(
-    "mpvpaper"
-)
-
 # Try to install AUR packages if yay is available
 if command_exists yay; then
     echo "📦 Installing AUR packages..."
@@ -99,7 +102,7 @@ echo "📁 Restoring dotfiles..."
 
 cd ~/dotfiles
 
-apps=(hypr rofi kitty waybar nvim fastfetch swaync qt5ct qt6ct wlogout Wallpapers wallust starship fish)
+apps=(hypr kitty waybar nvim fastfetch swaync qt5ct qt6ct wlogout Wallpapers wallust starship fish)
 
 for app in "${apps[@]}"; do
   echo "📦 Stowing $app..."
