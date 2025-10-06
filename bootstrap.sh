@@ -38,6 +38,8 @@ core_packages=(
     "gnome-keyring"
     "libsecret"
     "seahorse"
+    "efibootmgr"
+    "os-prober"
 )
 
 # Install core packages
@@ -47,7 +49,6 @@ install_packages "${core_packages[@]}"
 aur_packages=(
     "mpvpaper"
     "hyprland"
-    "nvidia"
     "unityhub"
     "kitty"
     "swww"
@@ -66,7 +67,7 @@ aur_packages=(
     "imagemagick"
     "yad"
     "notify-send"
-    "nautilus"
+    "thunar"
     "cursor-bin"
     "steam"
     "neovim"
@@ -74,6 +75,7 @@ aur_packages=(
     "fzf"
     "lazygit"
     "sddm"
+    "starship"
     "sddm-silent-theme "
     "zoxide"
     "visual-studio-code-bin"
@@ -84,6 +86,9 @@ aur_packages=(
     "mangohud"
     "ttf-gohu-nerd"
     "pokemon-colorscripts-git"
+    "zen-browser-bin"
+    "linux-cachyos-bore"
+    "linux-cachyos-bore-headers"
 )
 
 # Try to install AUR packages if yay is available
