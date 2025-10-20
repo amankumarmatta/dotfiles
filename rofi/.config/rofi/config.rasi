@@ -1,9 +1,0 @@
-configuration {
-  font: "IBM Plex Mono";
-  show-icons: false;
-  icon-theme: "none";
-  modi: "drun,run,window,ssh";
-  location: 0;
-}
-
-@theme "themes/nul1byt3"
