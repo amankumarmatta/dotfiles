@@ -14,6 +14,25 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
+echo "🔧 Checking for yay..."
+
+if ! command_exists yay; then
+    echo "📥 yay not found — installing yay (AUR helper)..."
+    sudo pacman -S --needed --noconfirm git base-devel
+
+    # clone yay
+    git clone https://aur.archlinux.org/yay-bin.git /tmp/yay-bin
+    cd /tmp/yay-bin || exit
+    makepkg -si --noconfirm
+
+    cd ~
+    rm -rf /tmp/yay-bin
+
+    echo "✅ yay installed successfully!"
+else
+    echo "👍 yay already installed"
+fi
+# -----------------------------
 # Function to install packages
 install_packages() {
     local packages=("$@")
@@ -37,7 +56,11 @@ core_packages=(
     "seahorse"
     "efibootmgr"
     "os-prober"
-    "lib32-mesa" "vulkan-radeon" "lib32-vulkan-radeon" "vulkan-icd-loader" "lib32-vulkan-icd-loader"
+    "lib32-mesa"
+    "vulkan-radeon"
+    "lib32-vulkan-radeon"
+    "vulkan-icd-loader"
+    "lib32-vulkan-icd-loader"
 )
 
 install_packages "${core_packages[@]}"
@@ -54,7 +77,6 @@ aur_packages=(
     "rofi-wayland"
     "fastfetch"
     "fish"
-    "wallust"
     "mpvpaper"
     "stow"
     "bc"
@@ -63,8 +85,8 @@ aur_packages=(
     "imagemagick"
     "yad"
     "notify-send"
-    "thunar"
-    "cursor-bin"
+    "nautilus"
+    "nwg-look"
     "steam"
     "neovim"
     "openrgb"
@@ -83,8 +105,6 @@ aur_packages=(
     "ttf-gohu-nerd"
     "pokemon-colorscripts-git"
     "zen-browser-bin"
-    "linux-cachyos-bore"
-    "linux-cachyos-bore-headers"
     "linux-wallpaperengine-git"
 )
 
