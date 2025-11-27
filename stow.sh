@@ -37,6 +37,7 @@ core_packages=(
     "seahorse"
     "efibootmgr"
     "os-prober"
+    "lib32-mesa" "vulkan-radeon" "lib32-vulkan-radeon" "vulkan-icd-loader" "lib32-vulkan-icd-loader"
 )
 
 install_packages "${core_packages[@]}"
@@ -84,6 +85,7 @@ aur_packages=(
     "zen-browser-bin"
     "linux-cachyos-bore"
     "linux-cachyos-bore-headers"
+    "linux-wallpaperengine-git"
 )
 
 if command_exists yay; then
@@ -99,7 +101,10 @@ echo "✅ Package installation completed!"
 # STOW SECTION (UPDATED)
 # -----------------------------
 echo "📁 Restoring dotfiles..."
-cd ~/dotfiles
+
+cd "$HOME/.config" || exit
+mkdir -p hypr fastfetch fish kitty rofi waybar
+cd "$HOME/dotfiles" || exit
 
 echo "📦 Stowing fastfetch..."
 stow --target=$HOME/.config/fastfetch fastfetch
