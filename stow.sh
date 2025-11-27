@@ -155,4 +155,25 @@ echo "📦 Stowing themes if present..."
 stow --target=$HOME/.themes themes 2>/dev/null || true
 
 echo "🎉 All dotfiles stowed successfully!"
+
+#!/bin/bash
+
+FSTAB_ENTRY="# /dev/sdb1
+UUID=2D5D808922F7E507   /mnt/hdd   ntfs-3g   defaults,uid=1000,gid=1000,umask=022   0  0"
+
+# Ensure mount directory exists
+sudo mkdir -p /mnt/hdd
+
+# Append ONLY if not already present
+if ! grep -q "UUID=2D5D808922F7E507" /etc/fstab; then
+    echo "Adding NTFS HDD entry to /etc/fstab..."
+    echo -e "\n$FSTAB_ENTRY" | sudo tee -a /etc/fstab > /dev/null
+else
+    echo "Entry already exists in /etc/fstab — skipping."
+fi
+
+# Validate fstab
+echo "Validating /etc/fstab..."
+sudo mount -a && echo "fstab OK!"
+
 echo "🔄 You may need to log out and back in for Hyprland to work properly."
