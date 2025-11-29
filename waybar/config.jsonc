@@ -2,7 +2,7 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-	"height": 36,
+	      "height": 36,
         "modules-left": ["hyprland/workspaces"],
         "modules-center": ["custom/swaync", "clock"],
         "modules-right": [
