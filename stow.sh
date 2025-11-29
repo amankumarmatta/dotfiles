@@ -115,6 +115,7 @@ aur_packages=(
     "pokemon-colorscripts-git"
     "zen-browser-bin"
     "ttf-twemoji"
+    "hyprshot"
 )
 
 if command_exists yay; then
