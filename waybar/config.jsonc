@@ -4,12 +4,13 @@
         "reload_style_on_change": true,
 	"height": 36,
         "modules-left": ["hyprland/workspaces"],
-        "modules-center": ["clock"],
+        "modules-center": ["custom/swaync", "clock"],
         "modules-right": [
           "group/tray-expander",
           "bluetooth",
           "network",
-          "pulseaudio"
+          "pulseaudio",
+          "custom/power"
         ],
         "hyprland/workspaces": {
           "on-click": "activate",
@@ -75,6 +76,31 @@
         "tooltip-format": "Devices connected: {num_connections}",
         "on-click": "kitty --class tui -- bash -c \"bluetui\""
       },
+      "custom/swaync": {
+        "tooltip": true,
+        "tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
+        "format": "{icon}",
+        "format-icons": {
+          "notification": "<span foreground='red'><sup></sup></span>",
+          "none": "",
+          "dnd-notification": "<span foreground='red'><sup></sup></span>",
+          "dnd-none": "",
+          "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+          "inhibited-none": "",
+          "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+          "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "sleep 0.1 && swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true,
+      },
+      "custom/power": {
+        "format": " ⏻ ",
+        "on-click": "killall wlogout || wlogout --protocol layer-shell"
+        },
       "pulseaudio": {
         "format": "{icon}",
         "on-click": "kitty --class tui -- bash -c \"wiremix\"",
