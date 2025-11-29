@@ -66,18 +66,18 @@
         "tooltip-format-disconnected": "Disconnected",
         "interval": 3,
         "spacing": 1,
-        "on-click": "impala"
+        "on-click": "kitty --class tui -- bash -c \"impala\""
       },
       "bluetooth": {
         "format": "",
         "format-disabled": "󰂲",
         "format-connected": "",
         "tooltip-format": "Devices connected: {num_connections}",
-        "on-click": "bluetui"
+        "on-click": "kitty --class tui -- bash -c \"bluetui\""
       },
       "pulseaudio": {
         "format": "{icon}",
-        "on-click": "$TERMINAL --class=Wiremix -e wiremix",
+        "on-click": "kitty --class tui -- bash -c \"wiremix\"",
         "on-click-right": "pamixer -t",
         "tooltip-format": "Playing at {volume}%",
         "scroll-step": 5,
@@ -86,4 +86,4 @@
           "default": ["", "", ""]
         }
       }
-} 
+}

@@ -52,6 +52,10 @@ echo "📦 Installing required packages..."
 
 core_packages=(
     "gnome-keyring"
+    "noto-fonts-cjk"
+    "noto-fonts"
+    "noto-fonts-extra"
+    "noto-fonts-emoji"
     "libsecret"
     "seahorse"
     "efibootmgr"
@@ -61,12 +65,17 @@ core_packages=(
     "lib32-vulkan-radeon"
     "vulkan-icd-loader"
     "lib32-vulkan-icd-loader"
+    "bluez"
+    "bluez-utils"
 )
 
 install_packages "${core_packages[@]}"
 
 aur_packages=(
     "mpvpaper"
+    "impala"
+    "wiremix"
+    "bluetui"w
     "hyprland"
     "unityhub"
     "kitty"
@@ -105,7 +114,7 @@ aur_packages=(
     "ttf-gohu-nerd"
     "pokemon-colorscripts-git"
     "zen-browser-bin"
-    "linux-wallpaperengine-git"
+    "ttf-twemoji"
 )
 
 if command_exists yay; then
@@ -143,36 +152,6 @@ stow --target=$HOME/.config/rofi rofi
 
 echo "📦 Stowing waybar..."
 stow --target=$HOME/.config/waybar waybar
-
-echo "📦 Stowing swaync..."
-stow --target=$HOME/.config/swaync swaync
-
-echo "📦 Stowing nvim..."
-stow --target=$HOME/.config/nvim nvim
-
-echo "📦 Stowing starship..."
-stow --target=$HOME/.config starship
-
-echo "📦 Stowing wallust..."
-stow --target=$HOME/.config wallust
-
-echo "📦 Stowing qt5ct..."
-stow --target=$HOME/.config qt5ct
-
-echo "📦 Stowing qt6ct..."
-stow --target=$HOME/.config qt6ct
-
-echo "📦 Stowing wlogout..."
-stow --target=$HOME/.config wlogout
-
-echo "📦 Stowing Wallpapers..."
-stow --target=$HOME Wallpapers
-
-echo "📦 Stowing cursors if present..."
-stow --target=$HOME/.icons cursors 2>/dev/null || true
-
-echo "📦 Stowing themes if present..."
-stow --target=$HOME/.themes themes 2>/dev/null || true
 
 echo "🎉 All dotfiles stowed successfully!"
 
