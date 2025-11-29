@@ -116,6 +116,7 @@ aur_packages=(
     "zen-browser-bin"
     "ttf-twemoji"
     "hyprshot"
+    "xnviewmp"
 )
 
 if command_exists yay; then
