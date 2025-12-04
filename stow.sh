@@ -51,6 +51,8 @@ install_packages() {
 echo "📦 Installing required packages..."
 
 core_packages=(
+    "ntfs-3g"
+    "mesa"
     "gnome-keyring"
     "noto-fonts-cjk"
     "noto-fonts"
@@ -75,7 +77,7 @@ aur_packages=(
     "mpvpaper"
     "impala"
     "wiremix"
-    "bluetui"w
+    "bluetui"
     "hyprland"
     "unityhub"
     "kitty"
@@ -85,7 +87,7 @@ aur_packages=(
     "waybar"
     "rofi-wayland"
     "fastfetch"
-    "fish"
+    "zsh"
     "mpvpaper"
     "stow"
     "bc"
@@ -134,14 +136,11 @@ echo "✅ Package installation completed!"
 echo "📁 Restoring dotfiles..."
 
 cd "$HOME/.config" || exit
-mkdir -p hypr fastfetch fish kitty rofi waybar
+mkdir -p hypr fastfetch kitty rofi waybar wlogout
 cd "$HOME/dotfiles" || exit
 
 echo "📦 Stowing fastfetch..."
 stow --target=$HOME/.config/fastfetch fastfetch
-
-echo "📦 Stowing fish..."
-stow --target=$HOME/.config/fish fish
 
 echo "📦 Stowing hypr..."
 stow --target=$HOME/.config/hypr hypr
@@ -155,15 +154,18 @@ stow --target=$HOME/.config/rofi rofi
 echo "📦 Stowing waybar..."
 stow --target=$HOME/.config/waybar waybar
 
+echo "📦 Stowing wlogout..."
+stow --target=$HOME/.config/wlogout wlogout
+
 echo "🎉 All dotfiles stowed successfully!"
 
 #!/bin/bash
 
 FSTAB_ENTRY="# /dev/sdb1
-UUID=2D5D808922F7E507   /mnt/hdd   ntfs-3g   defaults,uid=1000,gid=1000,umask=022   0  0"
+UUID=2D5D808922F7E507   /mnt/Storage   ntfs-3g   defaults,uid=1000,gid=1000,umask=022   0  0"
 
 # Ensure mount directory exists
-sudo mkdir -p /mnt/hdd
+sudo mkdir -p /mnt/Storage
 
 # Append ONLY if not already present
 if ! grep -q "UUID=2D5D808922F7E507" /etc/fstab; then
@@ -175,6 +177,7 @@ fi
 
 # Validate fstab
 echo "Validating /etc/fstab..."
+sudo systemctl daemon-reload
 sudo mount -a && echo "fstab OK!"
 
 echo "🔄 You may need to log out and back in for Hyprland to work properly."
