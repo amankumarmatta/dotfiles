@@ -7,16 +7,13 @@ run_stow() {
     local folders=(hypr waybar kitty fastfetch rofi wlogout)
 
     for folder in "${folders[@]}"; do
-        if [[ -d "$HOME/dotfiles/$folder" ]]; then
-            if [[ -e "$CONFIG_DIR/$folder" ]]; then
-                info "$folder already exists in .config — skipping."
-            else
-                info "Stowing $folder..."
-                stow --target="$CONFIG_DIR" "$folder"
-                ok "Stowed $folder."
-            fi
-        else
-            warn "Folder $folder missing in dotfiles — skipping."
-        fi
+        local target="$CONFIG_DIR/$folder"
+        mkdir -p "$target"
+
+        info "📦 Stowing $folder..."
+
+        stow --target="$target" "$folder"
+
+        ok "$folder stowed successfully."
     done
 }

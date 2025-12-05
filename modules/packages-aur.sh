@@ -7,11 +7,11 @@ install_aur_packages() {
         notify-send nautilus nwg-look steam neovim openrgb fzf lazygit sddm starship
         sddm-silent-theme zoxide ttf-jetbrains-mono-nerd gamemode lib32-gamemode
         ttf-ibm-plex ttf-roboto noto-fonts mangohud ttf-gohu-nerd
-        pokemon-colorscripts-git zen-browser-bin ttf-twemoji hyprshot xnviewmp cider
+        pokemon-colorscripts-git zen-browser-bin ttf-twemoji hyprshot xnviewmp
     )
 
     local to_install=()
-    for pkg in "${packages[@]}"; dog
+    for pkg in "${packages[@]}"; do	
         if pacman -Qi "$pkg" >/dev/null 2>&1; then
             info "$pkg already installed — skipping."
         else
