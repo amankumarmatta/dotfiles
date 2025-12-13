@@ -85,6 +85,14 @@ fi
 ok "Package installation done!"
 
 # -----------------------------------------------
+# ZSH SETUP   👈 RIGHT HERE
+# -----------------------------------------------
+if [[ "$INSTALL_MODE" != "minimal" ]]; then
+    info "Configuring Zsh..."
+    setup_zsh
+fi
+
+# -----------------------------------------------
 # DOTFILES (STOW)
 # -----------------------------------------------
 info "Applying dotfiles using stow..."

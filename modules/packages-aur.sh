@@ -2,7 +2,7 @@
 
 install_aur_packages() {
     local packages=(
-        mpvpaper impala wiremix bluetui hyprland kitty swww hyprlock swaync
+        mpvpaper impala wiremix bluetui hyprland xdg-desktop-portal-hyprland kitty swww hyprlock swaync
         waybar rofi-wayland fastfetch zsh mpvpaper stow bc jq ffmpeg imagemagick yad
         notify-send nautilus nwg-look steam neovim openrgb fzf lazygit sddm starship
         sddm-silent-theme zoxide ttf-jetbrains-mono-nerd gamemode lib32-gamemode
